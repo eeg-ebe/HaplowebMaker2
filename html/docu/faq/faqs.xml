@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<faqs>
+    <faq>
+        <name id="general">General questions</name>
+        <entry id="what_is_HaplowebMaker">
+            <question>What is HaplowebMaker</question>
+            <answer></answer>
+        </entry>
+        <entry id="what_is_Haploweb">
+            <question>What is HaplowebMaker</question>
+            <answer></answer>
+        </entry>
+        <entry id="">
+            <question>How does it work?</question>
+            <answer></answer>
+        </entry>
+        <entry id="">
+            <question>How should I cite this program?</question>
+            <answer></answer>
+        </entry>
+    </faq>
+    <faq>
+        <name id="input">Questions concerning input</name>
+            <question>Input files?</question>
+            <answer></answer>
+        </entry>
+        <entry id="color_input">
+            <question>How can I specify a colors?</question>
+            <answer>HaplowebMaker supports colors the 140 color names, rgb(), rgba(), hsl(), hsla(), #XXX and #XXXXXX.
+            integral number between</answer>
+        </entry>
+        <entry id="find_color">
+            <question>How can I find my color</question>
+            <answer></answer>
+        </entry>
+        <entry id="find_color">
+            <question>Alpha channel</question>
+            <answer></answer>
+        </entry>
+        <entry id="find_color">
+            <question>So how many colors can I specify?</question>
+            <answer>16777216</answer>
+        </entry>
+        <entry id="">
+            <question>In art , I learned that yellow, red and blue - why </question>
+            <answer></answer>
+        </entry>
+        <entry id="">
+            <question>YIQ</question>
+            <answer></answer>
+        </entry>
+        <entry id="">
+            <question>CMY</question>
+            <answer></answer>
+        </entry>
+        <entry id="">
+            <question>sharpness</question>
+            <answer></answer>
+        </entry>
+    </faq>
+    <faq>
+        <name id="editing"></name>
+    </faq>
+    <faq>
+        <name id="interpretation"></name>
+    </faq>
+</faqs>
