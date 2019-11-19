@@ -3,25 +3,35 @@
     <faq>
         <name id="general">General questions</name>
         <entry id="what_is_HaplowebMaker">
-            <question>What is HaplowebMaker</question>
-            <answer></answer>
+            <question>What is the purpose of the HaplowebMaker program?</question>
+            <answer>HaplowebMaker is a program capable of creating Haploweb representations from FASTA alignments.</answer>
         </entry>
         <entry id="what_is_Haploweb">
-            <question>What is HaplowebMaker</question>
-            <answer></answer>
+            <question>So and what is a Haploweb?</question>
+            <answer>Haplowebs are graphical representations. Haplowebs are haplotype networks that also show which haplotypes co-occur in at least one individual of the dataset. Haplowebs have been first purposed by Jean-François Flot in his paper
+            <a href="https://bmcevolbiol.biomedcentral.com/articles/10.1186/1471-2148-10-372">Haplowebs as a graphical tool for delimiting species: a revival of Doyle's &quot;field for recombination&quot; approach and its application to the coral genus <i>Pocillopora</i> in Clipperton</a></answer>
         </entry>
-        <entry id="">
+        <entry id="how_does_it_work">
             <question>How does it work?</question>
-            <answer></answer>
+            <answer>When the default settings are used, HaplowebMaker first calculates the evolutionary relationship of the sequences (haplotype network) via the Median-Joining-Algorithm. Afterwards the haplotype network gets visualized via a force directed graph drawing algorithm. Last, Bézier curves are added in order to connect those haplotypes that co-occur in at least one individual in the dataset.<br/><br/>However, the user has an influence on this procedure. Like this it is possible to choose another algorithm to calculate the evolutionary relationship.</answer>
         </entry>
-        <entry id="">
+        <entry id="edit">
+            <question>Is there a way to edit/improve the created Haploweb representation?</question>
+            <answer>Yes, HaplowebMaker provides a specialized Image-editor that can get used to give each Haploweb a final touch. As HaplowebMaker creates standard svg-images, it is also possible to edit the created Haplotype images in programs (like Inkscape) that support this file type.</answer>
+        </entry>
+        <entry id="cite">
             <question>How should I cite this program?</question>
-            <answer></answer>
+            <answer>As this program was not published yet, you may cite it using the URL.</answer>
         </entry>
     </faq>
     <faq>
         <name id="input">Questions concerning input</name>
+        <entry>
             <question>Input files?</question>
+            <answer></answer>
+        </entry>
+        <entry id="file_encoding">
+            <question>File encoding</question>
             <answer></answer>
         </entry>
         <entry id="color_input">
@@ -30,7 +40,7 @@
             integral number between</answer>
         </entry>
         <entry id="find_color">
-            <question>How can I find my color</question>
+            <question>Ok, I know which color I want to have but how can I find it's #rgb representation?</question>
             <answer></answer>
         </entry>
         <entry id="find_color">
@@ -57,7 +67,18 @@
             <question>sharpness</question>
             <answer></answer>
         </entry>
-    </faq>
+        <entry id="">
+            <question>web safe colors</question>
+            <answer></answer>
+        </entry>
+        <entry id="">
+            <question>same colors different screens</question>
+            <answer></answer>
+        </entry>
+        <entry id="">
+            <question>black circles</question>
+            <answer></answer>
+        </entry>
     <faq>
         <name id="editing"></name>
     </faq>
