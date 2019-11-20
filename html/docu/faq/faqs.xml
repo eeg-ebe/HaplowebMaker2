@@ -25,13 +25,49 @@
         </entry>
     </faq>
     <faq>
-        <name id="input">Questions concerning input</name>
+        <name id="input">Questions concerning input files</name>
         <entry>
-            <question>Input files?</question>
+            <question>What kind of input files do I need?</question>
+            <answer>At least a FASTA alignment file is needed. However for more sophisticated haplowebs you may also need to provide a color file.</answer>
+        </entry>
+        <entry id="input_file_fasta_alignment">
+            <question>What information is stored in the FASTA alignment file? / How does the FASTA alignment file has to be organised?</question>
+            <answer>The FASTA alignment file needs to list every sequence in your dataset. Furthermore the description/header/names of each sequence (or however you call the &gt;-line in a FASTA file that comes before a certain sequence) needs to follow certain rules, so that HaplowebMaker knows which sequences co-occur in which individual. More precisely the header of each sequence should follow the pattern <code>XXX_Y</code>, where <code>XXX</code> represents the name of each individual and <code>Y</code> a number, letter or any other symbol of your choice.<br/><br/>Example:<br/><code>&gt;Anton_a<br/>ACTGTCA---ACTGATGC<br/>Anton_b<br/>TAACGT----ACTGATGC<br/>&gt;Berta_1<br/>ACTA----CTGAACTATG<br/>Berta_2<br/>ACTA---ACTGAACTATG</code><br/><br/>(Here, HaplowebMaker knows that the two sequences <code>ACTGTCA---ACTGATGC></code> and <code>TAACGT----ACTGATGC</code> co-occur in the same individual named &quot;Anton&quot; as both sequences share the same substring before the <code>_</code> delimiter.)</answer>
+        </entry>
+        <entry id="input_file_fasta_alignment_y_part">
+            <question>Why do I have to specify this &quot;_Y&quot; part in my FASTA alignment files?</question>
+            <answer>To ensure that the individual sequence headers remain distinguishable. So be sure to use a different character for every sequence (HaplowebMaker does not enforce this). Otherwise you may have to guess which sequence HaplowebMaker is referring to when it tells you that sequence <code>XXX_a</code> is represented by circle <code>C</code> in the haploweb image.
+        </entry>
+        <entry id="input_file_fasta_alignment_homozygous_individuals">
+            <question>So this &quot;_Y&quot; part in my FASTA alignment file is to ensure that the individual sequence headers remain distinguishable. However I want to add a homozygous individual to my dataset. So there is no &quot;second sequence&quot;. Do I nevertheless have to add that &quot;_Y&quot; part?</question>
+            <answer>AS LONG AS the name itself does NOT contain any <code>_</code> characters, the &quot;_Y&quot; part can be omitted. In this kind of situation homozygous individual can be specified in three different ways (Let's assume, that the individual has the name &quot;Charlie&quot;, then you could use <code>&gt;Charlie<br/>ACTG</code> or <code>&gt;Charlie_a<br/>ACTG</code> or <code>&gt;Charlie_a<br/>ACTG<br/>&gt;Charlie_b<br/>ACTG</code>. The last representation can be used in order to highlight that although the individual is homozyogus, it is till a diploid individual). If however the name of the individual contains a <code>_</code> character the &quot;_Y&quot;part becomes mandatory (so either use <code>&gt;Charlie_Brown_a<br/>ACTG</code> or <code>&gt;Charlie_Brown_a<br/>ACTG<br/>&gt;Charlie_Brown_b<br/>ACTG</code>).</answer>
+        </entry>
+        <entry id="input_file_fasta_multiple_delimiting_char">
+            <question>What happens if a sequence header contains multiple <code>_</code> characters?</question>
+            <answer>Then HaplowebMaker will use the last <code>_</code> character in order to split the sequence header. E.g. if you have <code>Charlie_Brown_sequenceA</code>, then HaplowebMaker will consider that <code>Charlie_Brown</code> is the name of the individual this sequence belongs to and that <code>sequenceA</code> is the part that you want to use in order to make this sequence distinguishable in comparison to other sequences from <code>Charlie_Brown</code> that co-exist in the dataset.</answer>
+        </entry>
+        <entry id="input_file_fasta_no_delimiting_char">
+            <question>What happens if a sequence header does NOT contain any <code>_</code> characters?</question>
+            <answer>Then HaplowebMaker will consider that the sequence header is only indicating the individual name. And if your FASTA input file contains two different sequences with the same individual name, HaplowebMaker will think that this individual is heterozygous. (So yes, it is also possible to obmit the &quot;_Y&quot; part for heterozygous individuals, however then the haploweb analysis may become impossible.)</answer>
+        </entry>
+        <entry id="input_file_fasta_other_delimiting_char">
+            <question>I do not like to use that <code>_</code> character. Can I also use another delimiting character?</question>
+            <answer>Yes. In the &quot;Advanced settings&quot; you can choose another delimiter character.</answer>
+        </entry>
+        <entry id="input_file_fasta_nuc_sequences">
+            <question>In all your examples you are only showing FASTA alignment input files with nucleotide sequences. Is it possible to use other sequences (e.g. binary sequence)?</question>
+            <answer>Till now, HaplowebMaker can only process nucleotide sequences.</answer>
+        </entry>
+        <entry id="input_file_fasta_nuc_sequences_ambig">
+            <question>I have some ambiguous characters in my nucleotide sequence (R, Y, S, W, K, M, B, D H, V, N). How can I handle this kind of situation?</question>
+            <answer>By default, HaplowebMaker will moan about any ambiguous characters. The problem is, that such characters most often make the biological analysis of the resulting haplowebs unnecessarily complicated. It would be best if the FASTA alignment input file does not contain such ambiguous characters at all. However, via &quot;Advanced settings&quot; you can tell HaplowebMaker to handle such ambiguous characters differently.</answer>
+        </entry>
+        <entry id="input_file_fasta_mult_nuc_sequence_for_one">
+            <question></question>
             <answer></answer>
         </entry>
         <entry id="file_encoding">
-            <question>File encoding</question>
+            <question>Are there any file encoding considerations?</question>
             <answer></answer>
         </entry>
         <entry id="color_input">
@@ -49,11 +85,11 @@
         </entry>
         <entry id="find_color">
             <question>So how many colors can I specify?</question>
-            <answer>16777216</answer>
+            <answer>16777216 (alpha channel)</answer>
         </entry>
         <entry id="">
-            <question>In art , I learned that yellow, red and blue - why </question>
-            <answer></answer>
+            <question>In art, I learned that red, yellow and blue are the primary colors. Why do I need to specify the color by using red, green and blue?</question>
+            <answer>That is because </answer>
         </entry>
         <entry id="">
             <question>YIQ</question>
@@ -68,21 +104,40 @@
             <answer></answer>
         </entry>
         <entry id="">
-            <question>web safe colors</question>
+            <question>Should I use web safe colors only?</question>
             <answer></answer>
         </entry>
         <entry id="">
-            <question>same colors different screens</question>
-            <answer></answer>
+            <question>Ok, so I choose this great looking color. But it is looking a bit differently on the screen of my cooperator. What can be the reason?</question>
+            <answer>same colors different screens</answer>
         </entry>
         <entry id="">
             <question>black circles</question>
             <answer></answer>
         </entry>
+    </faq>
+    <faq>
+        <name id="analysis"></name>
+        <entry>
+            <question>Count on individual level or sequence level?</question>
+            <answer></answer>
+        </entry>
+    </faq>
     <faq>
         <name id="editing"></name>
     </faq>
     <faq>
         <name id="interpretation"></name>
+    </faq>
+    <faq>
+        <name id="Error analysis"></name>
+        <entry>
+            <question>black color</question>
+            <answer></answer>
+        </entry>
+        <entry>
+            <question>No curves</question>
+            <answer> If the resulting Haploweb does not contain any &quot;curves&quot; this is most often because HaplowebMaker does not . check whether your input fasta file follows these rules.</answer>
+        </entry>
     </faq>
 </faqs>
