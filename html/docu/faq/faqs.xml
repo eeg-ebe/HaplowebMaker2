@@ -54,6 +54,14 @@
             <question>I do not like to use that <code>_</code> character. Can I also use another delimiting character?</question>
             <answer>Yes. In the &quot;Advanced settings&quot; you can choose another delimiter character.</answer>
         </entry>
+        <entry id="input_file_fasta_space_beginning_ends">
+            <question>Can I add a space after each &gt; character in the FASTA alignment input file?</question>
+            <answer>Yes, HaplowebMaker ignores all spaces at the beginning and at the end of a sequence header.</answer>
+        </entry>
+        <entry id="input_file_fasta_comments">
+            <question>Is it possible to add comments to my FASTA alignment files?</question>
+            <answer>Yes, HaplowebMaker supports comments in FASTA alignment files. HaplowebMaker ignores any line that is starting by a semicolon or a hashtag character.</answer>
+        </entry>
         <entry id="input_file_fasta_nuc_sequences">
             <question>In all your examples you are only showing FASTA alignment input files with nucleotide sequences. Is it possible to use other sequences (e.g. binary sequence)?</question>
             <answer>Till now, HaplowebMaker can only process nucleotide sequences.</answer>
@@ -63,20 +71,31 @@
             <answer>By default, HaplowebMaker will moan about any ambiguous characters. The problem is, that such characters most often make the biological analysis of the resulting haplowebs unnecessarily complicated. It would be best if the FASTA alignment input file does not contain such ambiguous characters at all. However, via &quot;Advanced settings&quot; you can tell HaplowebMaker to handle such ambiguous characters differently.</answer>
         </entry>
         <entry id="input_file_fasta_mult_nuc_sequence_for_one">
-            <question></question>
-            <answer></answer>
+            <question>I have a set of sequences for an individual. However some of the sequences in my set are certainly incorrect. However I do not know which one. Should I pass all these sequences to HaplowebMaker?</question>
+            <answer>If you have (let's say) 5 different sequences for a diploid individual, you have 3 too much. And if you pass all these 5 sequences to HaplowebMaker, HaplowebMaker will consider that this individual is 5-ploid. This is probably not what you want.</answer>
         </entry>
-        <entry id="file_encoding">
-            <question>Are there any file encoding considerations?</question>
-            <answer></answer>
+        <entry id="multi_upload_input_file_fasta">
+            <question>I want to get haploweb representations for a buch of files. How can I do this most effectively?</question>
+            <answer>Just upload all FASTA alignment files at once. (Still be sure that your browser will not run out of memory.)</answer>
         </entry>
-        <entry id="color_input">
-            <question>How can I specify a colors?</question>
-            <answer>HaplowebMaker supports colors the 140 color names, rgb(), rgba(), hsl(), hsla(), #XXX and #XXXXXX.
-            integral number between</answer>
+        <entry id="input_color_file">
+            <question>I want to specify the colors, HaplowebMaker should use in order to color the Haploweb. How can I do this?</question>
+            <answer>You need to pass a color file to HaplowebMaker.</answer>
+        </entry>
+        <entry id="input_color_file_orga">
+            <question>What information is stored in the color file? / How does the color file has to be organised?</question>
+            <answer>The color file is a tab separated file mapping a color to an individual (or to a sequence). So each line in that file is following the format IndividualName Tab ColorName.</answer>
+        </entry>
+        <entry id="input_color_file_color_names">
+            <question>Which color names are supported by HaplowebMaker?</question>
+            <answer>HaplowebMaker supports colors the <a href="https://www.w3schools.com/colors/colors_names.asp">140 html color names</a>. Furthermore it is possible to specify a color via their rgb(), rgba(), hsl(), hsla(), #XXX and #XXXXXX representations.</answer>
+        </entry>
+        <entry id="input_color_file_spaces_in_color_names">
+            <question>Can I insert spaces in these color names, e.g. &quot;Alice Blue&quot; instead of &quot;AliceBlue&quot;?</question>
+            <answer>No, don't do this. The color strings are interpreted by the webbrowser. Most webbrowsers will return black for a color they do not know.</answer>
         </entry>
         <entry id="find_color">
-            <question>Ok, I know which color I want to have but how can I find it's #rgb representation?</question>
+            <question>Ok, I know which color I want to have but how can I find it's #XXXXXX representation?</question>
             <answer></answer>
         </entry>
         <entry id="find_color">
@@ -85,7 +104,7 @@
         </entry>
         <entry id="find_color">
             <question>So how many colors can I specify?</question>
-            <answer>16777216 (alpha channel)</answer>
+            <answer>16777216 (without considering alpha channel)</answer>
         </entry>
         <entry id="">
             <question>In art, I learned that red, yellow and blue are the primary colors. Why do I need to specify the color by using red, green and blue?</question>
@@ -114,6 +133,22 @@
         <entry id="">
             <question>black circles</question>
             <answer></answer>
+        </entry>
+        <entry id="file_endings">
+            <question>Which line endings should I use in my input files?</question>
+            <answer>Unix (\n) and Windows (\r\n) line endings both work fine. However HaplowebMaker cannot handle the deprecated Macintosh line endings (\r) or the AIX OS line endings (\025). (Congratulations, if you still have any legacy software that can handle files with Macintosh and/or AIX OS file endings.)</answer>
+        </entry>
+        <entry id="file_encoding">
+            <question>Which encoding should I use for my input files?</question>
+            <answer>The de facto internet standard encoding: UTF-8.</answer>
+        </entry>
+        <entry id="file_encoding_character_comparison">
+            <question>So HaplowebMaker is using UTF-8. That means I can use chinese, japanese, korean, hebrew, ... characters in my </question>
+            <answer>, so if you care about Hebre ... NFC NFD</answer>
+        </entry>
+        <entry id="file_encoding_character_sorting">
+            <question></question>
+            <answer>. As this may be browser dependent, try it out with your browser.</answer>
         </entry>
     </faq>
     <faq>
