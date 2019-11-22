@@ -26,21 +26,21 @@
     </faq>
     <faq>
         <name id="input">Questions concerning input files</name>
-        <entry>
+        <entry id="which_input_files">
             <question>What kind of input files do I need?</question>
             <answer>At least a FASTA alignment file is needed. However for more sophisticated haplowebs you may also need to provide a color file.</answer>
         </entry>
         <entry id="input_file_fasta_alignment">
             <question>What information is stored in the FASTA alignment file? / How does the FASTA alignment file has to be organised?</question>
-            <answer>The FASTA alignment file needs to list every sequence in your dataset. Furthermore the description/header/names of each sequence (or however you call the &gt;-line in a FASTA file that comes before a certain sequence) needs to follow certain rules, so that HaplowebMaker knows which sequences co-occur in which individual. More precisely the header of each sequence should follow the pattern <code>XXX_Y</code>, where <code>XXX</code> represents the name of each individual and <code>Y</code> a number, letter or any other symbol of your choice.<br/><br/>Example:<br/><code>&gt;Anton_a<br/>ACTGTCA---ACTGATGC<br/>Anton_b<br/>TAACGT----ACTGATGC<br/>&gt;Berta_1<br/>ACTA----CTGAACTATG<br/>Berta_2<br/>ACTA---ACTGAACTATG</code><br/><br/>(Here, HaplowebMaker knows that the two sequences <code>ACTGTCA---ACTGATGC></code> and <code>TAACGT----ACTGATGC</code> co-occur in the same individual named &quot;Anton&quot; as both sequences share the same substring before the <code>_</code> delimiter.)</answer>
+            <answer>The FASTA alignment file needs to list every sequence in your dataset. Furthermore the description/header/names of each sequence (or however you call the &gt;-line in a FASTA file that comes before a certain sequence) needs to follow certain rules, so that HaplowebMaker knows which sequences co-occur in which individual. More precisely the header of each sequence should follow the pattern <code>XXX_Y</code>, where <code>XXX</code> represents the name of each individual and <code>Y</code> a number, letter or any other symbol of your choice.<br/><br/>Example:<br/><code>&gt;Anton_a<br/>ACTGTCA---ACTGATGC<br/>Anton_b<br/>TAACGT----ACTGATGC<br/>&gt;Berta_1<br/>ACTA----CTGAACTATG<br/>Berta_2<br/>ACTA---ACTGAACTATG</code><br/><br/>(Here, HaplowebMaker knows that the two sequences <code>ACTGTCA---ACTGATGC</code> and <code>TAACGT----ACTGATGC</code> co-occur in the same individual named &quot;Anton&quot; as both sequences share the same substring before the <code>_</code> delimiter.)</answer>
         </entry>
         <entry id="input_file_fasta_alignment_y_part">
             <question>Why do I have to specify this &quot;_Y&quot; part in my FASTA alignment files?</question>
-            <answer>To ensure that the individual sequence headers remain distinguishable. So be sure to use a different character for every sequence (HaplowebMaker does not enforce this). Otherwise you may have to guess which sequence HaplowebMaker is referring to when it tells you that sequence <code>XXX_a</code> is represented by circle <code>C</code> in the haploweb image.
+            <answer>To ensure that the individual sequence headers remain distinguishable. So be sure to use a different character for every sequence (HaplowebMaker does not enforce this). Otherwise you may have to guess which sequence HaplowebMaker is referring to when it tells you that sequence <code>XXX_a</code> is represented by circle <code>C</code> in the haploweb image.</answer>
         </entry>
         <entry id="input_file_fasta_alignment_homozygous_individuals">
             <question>So this &quot;_Y&quot; part in my FASTA alignment file is to ensure that the individual sequence headers remain distinguishable. However I want to add a homozygous individual to my dataset. So there is no &quot;second sequence&quot;. Do I nevertheless have to add that &quot;_Y&quot; part?</question>
-            <answer>AS LONG AS the name itself does NOT contain any <code>_</code> characters, the &quot;_Y&quot; part can be omitted. In this kind of situation homozygous individual can be specified in three different ways (Let's assume, that the individual has the name &quot;Charlie&quot;, then you could use <code>&gt;Charlie<br/>ACTG</code> or <code>&gt;Charlie_a<br/>ACTG</code> or <code>&gt;Charlie_a<br/>ACTG<br/>&gt;Charlie_b<br/>ACTG</code>. The last representation can be used in order to highlight that although the individual is homozyogus, it is till a diploid individual). If however the name of the individual contains a <code>_</code> character the &quot;_Y&quot;part becomes mandatory (so either use <code>&gt;Charlie_Brown_a<br/>ACTG</code> or <code>&gt;Charlie_Brown_a<br/>ACTG<br/>&gt;Charlie_Brown_b<br/>ACTG</code>).</answer>
+            <answer>AS LONG AS the name itself does NOT contain any <code>_</code> characters, the &quot;_Y&quot; part can be omitted. In this kind of situation homozygous individual can be specified in three different ways (Let's assume, that the individual has the name &quot;Charlie&quot;, then you could use <br/><code>&gt;Charlie<br/>ACTG</code><br/> or <br/><code>&gt;Charlie_a<br/>ACTG</code><br/> or <br/><code>&gt;Charlie_a<br/>ACTG<br/>&gt;Charlie_b<br/>ACTG</code><br/>. The last representation can be used in order to highlight that although the individual is homozyogus, it is till a diploid individual). If however the name of the individual contains a <code>_</code> character the &quot;_Y&quot;part becomes mandatory (so either use <br/><code>&gt;Charlie_Brown_a<br/>ACTG</code><br/> or <br/><code>&gt;Charlie_Brown_a<br/>ACTG<br/>&gt;Charlie_Brown_b<br/>ACTG</code><br/>).</answer>
         </entry>
         <entry id="input_file_fasta_multiple_delimiting_char">
             <question>What happens if a sequence header contains multiple <code>_</code> characters?</question>
@@ -75,7 +75,7 @@
             <answer>If you have (let's say) 5 different sequences for a diploid individual, you have 3 too much. And if you pass all these 5 sequences to HaplowebMaker, HaplowebMaker will consider that this individual is 5-ploid. This is probably not what you want.</answer>
         </entry>
         <entry id="multi_upload_input_file_fasta">
-            <question>I want to get haploweb representations for a buch of files. How can I do this most effectively?</question>
+            <question>I want to get haploweb representations for a bunch of files. How can I do this most effectively?</question>
             <answer>Just upload all FASTA alignment files at once. (Still be sure that your browser will not run out of memory.)</answer>
         </entry>
         <entry id="input_color_file">
@@ -88,31 +88,31 @@
         </entry>
         <entry id="input_color_file_color_names">
             <question>Which color names are supported by HaplowebMaker?</question>
-            <answer>HaplowebMaker supports colors the <a href="https://www.w3schools.com/colors/colors_names.asp">140 html color names</a>. Furthermore it is possible to specify a color via their rgb(), rgba(), hsl(), hsla(), #XXX and #XXXXXX representations.</answer>
+            <answer>HaplowebMaker supports colors the <a href="https://www.w3schools.com/colors/colors_names.asp">140 html color names</a>. Furthermore it is possible to specify a color via their <a href="https://www.w3schools.com/colors/colors_rgb.asp">rgb()</a>, rgba(), <a href="https://www.w3schools.com/colors/colors_hsl.asp">hsl()</a>, hsla(), #XXX and <a href="https://www.w3schools.com/colors/colors_hexadecimal.asp">#XXXXXX</a> representations.</answer>
         </entry>
         <entry id="input_color_file_spaces_in_color_names">
             <question>Can I insert spaces in these color names, e.g. &quot;Alice Blue&quot; instead of &quot;AliceBlue&quot;?</question>
-            <answer>No, don't do this. The color strings are interpreted by the webbrowser. Most webbrowsers will return black for a color they do not know.</answer>
+            <answer>Don't do this. The color strings are interpreted by the webbrowser. Most webbrowsers don't support spaces in color names and will return black for a color name that they do not know.</answer>
         </entry>
         <entry id="find_color">
             <question>Ok, I know which color I want to have but how can I find it's #XXXXXX representation?</question>
-            <answer></answer>
+            <answer>Use a <a href="https://www.w3schools.com/colors/colors_picker.asp">color chooser</a>.</answer>
         </entry>
-        <entry id="find_color">
-            <question>Alpha channel</question>
-            <answer></answer>
+        <entry id="alpha_channel">
+            <question>Is it a good idea to specify a color with alpha channel?</question>
+            <answer>The alpha channel will make your color transparent (or semi transparent). You probably don't want to have invisible circles in your haploweb, so no, in general this is not a good idea.</answer>
         </entry>
         <entry id="find_color">
             <question>So how many colors can I specify?</question>
-            <answer>16777216 (without considering alpha channel)</answer>
+            <answer>16777216 (without considering alpha channel).</answer>
         </entry>
+        <entry id="color_mix">
+            <question>In art, I learned that red, yellow and blue are primary colors. Why do I need to specify my color by using red, green and blue?</question>
+            <answer>Red, green and blue are the primary colors for light. Computer screens mix light together, not watercolors (That's why you do not have to refill any paint when using a screen).<br/><br/>What you learned in art is not wrong. The only problem is that watercolors (where indeed red, yellow and blue would be the primary colors) are mixing differently then light (Watercolors: Mix all colors together and you are getting black; Light: Mix all colors together and you are getting white).</answer>
+        </entry><!--
         <entry id="">
-            <question>In art, I learned that red, yellow and blue are the primary colors. Why do I need to specify the color by using red, green and blue?</question>
-            <answer>That is because </answer>
-        </entry>
-        <entry id="">
-            <question>YIQ</question>
-            <answer></answer>
+            <question>Is there any sharper like the YIQ color space?</question>
+            <answer>No.</answer>
         </entry>
         <entry id="">
             <question>CMY</question>
@@ -121,36 +121,33 @@
         <entry id="">
             <question>sharpness</question>
             <answer></answer>
-        </entry>
-        <entry id="">
+        </entry>-->
+        <entry id="web_safe_color">
             <question>Should I use web safe colors only?</question>
-            <answer></answer>
+            <answer>The term &quot;web save color&quot; dates from a time, where most computers could not display more then 256 colors. With a reasonably modern computers there is no need to adhere to this limitation this limitation anymore.</answer>
         </entry>
-        <entry id="">
+        <entry id="color_look_diff">
             <question>Ok, so I choose this great looking color. But it is looking a bit differently on the screen of my cooperator. What can be the reason?</question>
-            <answer>same colors different screens</answer>
-        </entry>
-        <entry id="">
-            <question>black circles</question>
-            <answer></answer>
+            <answer>Monitor construction differences can be the reason (e.g. glossy versus matte). Furthermore monitors have color settings. For example, the set  brightness can make colors appear brighter or darker.</answer>
         </entry>
         <entry id="file_endings">
-            <question>Which line endings should I use in my input files?</question>
+            <question>Which line endings should I use for my input files?</question>
             <answer>Unix (\n) and Windows (\r\n) line endings both work fine. However HaplowebMaker cannot handle the deprecated Macintosh line endings (\r) or the AIX OS line endings (\025). (Congratulations, if you still have any legacy software that can handle files with Macintosh and/or AIX OS file endings.)</answer>
         </entry>
         <entry id="file_encoding">
-            <question>Which encoding should I use for my input files?</question>
+            <question>Which character encoding should I use for my input files?</question>
             <answer>The de facto internet standard encoding: UTF-8.</answer>
-        </entry>
+        </entry><!--
         <entry id="file_encoding_character_comparison">
-            <question>So HaplowebMaker is using UTF-8. That means I can use chinese, japanese, korean, hebrew, ... characters in my </question>
-            <answer>, so if you care about Hebre ... NFC NFD</answer>
+            <question>So HaplowebMaker is using UTF-8. That means I can use chinese, japanese, korean, hebrew, ... characters in my individual names?</question>
+            <answer>Sigh, yes, you can. However, so if you care about Hebre ... NFC NFD</answer>
         </entry>
         <entry id="file_encoding_character_sorting">
             <question></question>
             <answer>. As this may be browser dependent, try it out with your browser.</answer>
-        </entry>
+        </entry>-->
     </faq>
+    <!-- report bugs
     <faq>
         <name id="analysis"></name>
         <entry>
@@ -175,4 +172,5 @@
             <answer> If the resulting Haploweb does not contain any &quot;curves&quot; this is most often because HaplowebMaker does not . check whether your input fasta file follows these rules.</answer>
         </entry>
     </faq>
+    -->
 </faqs>
