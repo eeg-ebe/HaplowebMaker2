@@ -2,18 +2,17 @@
 <faqs>
     <faq>
         <name id="general">General questions</name>
-        <entry id="what_is_HaplowebMaker">
+        <entry id="What_is_HaplowebMaker">
             <question>What is the purpose of the HaplowebMaker program?</question>
-            <answer>HaplowebMaker is a program capable of creating Haploweb representations from FASTA alignments.</answer>
+            <answer>HaplowebMaker was designed to automatize the creation of haplotype networks (haplonets) and haplotype webs (haplowebs) from FASTA alignments.</answer>
         </entry>
-        <entry id="what_is_Haploweb">
-            <question>So and what is a Haploweb?</question>
-            <answer>Haplowebs are graphical representations. Haplowebs are haplotype networks that also show which haplotypes co-occur in at least one individual of the dataset. Haplowebs have been first purposed by Jean-François Flot in his paper
-            <a href="https://bmcevolbiol.biomedcentral.com/articles/10.1186/1471-2148-10-372">Haplowebs as a graphical tool for delimiting species: a revival of Doyle's &quot;field for recombination&quot; approach and its application to the coral genus <i>Pocillopora</i> in Clipperton</a></answer>
+        <entry id="What_are_haplowebs">
+            <question>What is the difference between haplotype networks (haplonets) and haplotype webs (haplowebs)?</question>
+            <answer>(Network-based) haplowebs are haplonets with added connections between haplotypes found co-occurring in heterozygous individuals (see <a href="https://bmcevolbiol.biomedcentral.com/articles/10.1186/1471-2148-10-372">Flot et al. 2010</a>). Haplonets should be used for haploid markers and haplowebs for diploid (or polyploid) markers.</answer>
         </entry>
-        <entry id="how_does_it_work">
-            <question>How does it work?</question>
-            <answer>When the default settings are used, HaplowebMaker first calculates the evolutionary relationship of the sequences (haplotype network) via the Median-Joining-Algorithm. Afterwards the haplotype network gets visualized via a force directed graph drawing algorithm. Last, Bézier curves are added in order to connect those haplotypes that co-occur in at least one individual in the dataset.<br/><br/>However, the user has an influence on this procedure. Like this it is possible to choose another algorithm to calculate the evolutionary relationship.</answer>
+        <entry id="How_does_it_work">
+            <question>How does HaplowebMaker work?</question>
+            <answer>HaplowebMaker starts by computing the median-joining network (<a href="https://doi.org/10.1093/oxfordjournals.molbev.a026036">Bandelt et al. 1999</a>) corresponding to the input alignment. In the resulting representation, haplotypes are represented with circles (large circles for frequent haplotypes, small circles for rare ones) and lines are drawn connecting them (with lengths proportional to the number of mutations). Bézier curves connect the haplotypes found co-occurring in heterozygous individuals. To facilitate inspection and generate publication-quality graphs, HaplowebMaker implements a force-directed drawing algorithm that spreads the network and the Bézier curves.</answer>
         </entry>
         <entry id="edit">
             <question>Is there a way to edit/improve the created Haploweb representation?</question>
@@ -160,6 +159,21 @@
     </faq>
     <faq>
         <name id="interpretation"></name>
+    </faq>
+    <faq>
+        <name id="Error analysis"></name>
+        <entry>
+            <question>black color</question>
+            <answer></answer>
+        </entry>
+        <entry>
+            <question>No curves</question>
+            <answer> If the resulting Haploweb does not contain any &quot;curves&quot; this is most often because HaplowebMaker does not . check whether your input fasta file follows these rules.</answer>
+        </entry>
+    </faq>
+</faqs>
+
+="editing"></name>
     </faq>
     <faq>
         <name id="Error analysis"></name>
