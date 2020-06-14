@@ -10,19 +10,21 @@ def toHtml(e):
 
 root = ET.parse('faqs.xml').getroot()
 with codecs.open("faq.html", "w", "UTF-8") as outF:
-    outF.write("<!Doctype html>")
-    outF.write("<html>")
-    outF.write("<head>")
-    outF.write("<meta charset=\"UTF-8\" />")
-    outF.write("<title>FAQ</title>")
-    outF.write("</head>")
-    outF.write("<body>")
-    for faq in root:
-        outF.write("<a name=\"%s\"></a>" % faq.find('name').attrib['id'])
-        outF.write("<h1>%s</h1>" % toHtml(faq.find('name')))
-        for entry in faq.findall("entry"):
-            outF.write("<a name=\"%s\"></a>" % entry.attrib['id'])
-            outF.write("<h3>%s</h3>" % toHtml(entry.find("question")))
-            outF.write("%s" % toHtml(entry.find("answer")))
-    outF.write("</body>")
+    outF.write("<!Doctype html>\n")
+    outF.write("    <html>\n")
+    outF.write("        <head>\n")
+    outF.write("            <meta charset=\"UTF-8\" />\n")
+    outF.write("            <title>FAQ</title>\n")
+    outF.write("        </head>\n")
+    outF.write("    <body>\n")
+    for faqSectionNr, faq in enumerate(root):
+        faqSectionNr += 1
+        outF.write("    <a name=\"%s\"></a>\n" % faq.find('name').attrib['id'])
+        outF.write("    <h1>%s</h1>\n" % toHtml(faq.find('name')))
+        for nr, entry in enumerate(faq.findall("entry")):
+            nr += 1
+            outF.write("        <a name=\"%s\"></a>\n" % entry.attrib['id'])
+            outF.write("        <h3>Q%s.%s: %s</h3>\n" % (faqSectionNr, nr, toHtml(entry.find("question"))))
+            outF.write("        %s\n" % toHtml(entry.find("answer")))
+    outF.write("    </body>\n")
     outF.write("</html>")
