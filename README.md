@@ -1,2 +1,2 @@
-# Bibimbap
+# HaplowebMaker2
 
